@@ -1,0 +1,20 @@
+name: Core check ⚓
+
+# Runs on every pull request and push to main. Green = the core task board still works.
+# This is what "don't break the core" means in practice — it's a check, not a vibe.
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  core-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Run the core-integrity check
+        run: node scripts/check.mjs
