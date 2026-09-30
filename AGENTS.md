@@ -47,3 +47,10 @@ themselves next time.
 If asked "find me a good task": read `PLAN.md`, prefer items in the "Good first tasks" list,
 and pick one matching the user's stated interest and skill. Then help them claim it (comment
 on / open the matching issue) before writing code.
+
+## Skills
+
+`.claude/skills/harbor-proof/SKILL.md` builds a complete PR description from the real diff.
+Load it before opening a PR: it lists the files you changed, the tests that cover them, the
+commands you actually ran, and the UX evidence. It never overwrites a description someone
+already wrote — it appends.
